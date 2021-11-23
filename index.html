@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tik-tac-toe</title>
+    <script src="script.js"></script>
+</head>
+<style>
+
+    html{
+        background-color:rgb(70, 66, 99)
+    }
+    #message{
+        color:white;
+        font-size:xx-large;
+        text-align:center;
+    }
+    .container{
+        display:grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns:auto auto auto;
+        margin-top: 10%;
+    }
+
+    .square{
+        height: 175px;
+        width: 175px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color:white;
+        font-size:100px;
+    } 
+
+
+    #s1{
+        border-right:5px inset rgba(0, 0, 255, 0.7);
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s1:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s2{
+        border-right:5px inset rgba(0, 0, 255, 0.7);
+        border-left:5px inset rgba(0, 0, 255, 0.7);
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s2:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s3{
+        border-left:5px inset rgba(0, 0, 255, 0.7); 
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s3:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s4{
+        border-right:5px inset rgba(0, 0, 255, 0.7);
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ; 
+        border-top:5px inset rgba(0, 0, 255, 0.7) ;  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s4:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s5{
+        border-right:5px inset rgba(0, 0, 255, 0.7); 
+        border-left:5px inset rgba(0, 0, 255, 0.7);  
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ;  
+        border-top:5px inset rgba(0, 0, 255, 0.7) ;   
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s5:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s6{
+        border-left:5px inset rgba(0, 0, 255, 0.7);
+        border-bottom:5px inset rgba(0, 0, 255, 0.7) ; 
+        border-top:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s6:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s7{
+        border-right:5px inset rgba(0, 0, 255, 0.7);  
+        border-top:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    }
+
+    #s7:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s8{
+        border-right:5px inset rgba(0, 0, 255, 0.7);
+        border-left:5px inset rgba(0, 0, 255, 0.7); 
+        border-top:5px inset rgba(0, 0, 255, 0.7) ; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    }
+
+    #s8:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    #s9{
+        border-left:5px inset rgba(0, 0, 255, 0.7);
+        border-top:5px inset rgba(0, 0, 255, 0.7); 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #s9:hover{
+        background-color:black;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    .X{
+        margin-top:10%;
+        Float:left;
+        padding-left:10%;
+        color:white;
+        font-size:125px;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:10px;
+        margin-left:15%;
+        
+
+    }
+
+    #X{
+        border-style:none;
+        border-width:5px;
+        border-color:white;
+        border-radius:20px;
+    }
+
+    .O{
+        margin-top:10%;
+        float:right;
+        padding-right:10%;
+        color:white;
+        font-size:125px;
+        justify-content:center;
+        align-items:center;
+        padding:center;
+        text-align:center;
+        padding:10px;
+        margin-right:15%;
+    }
+
+    #O{
+        border-style:none;
+        border-width:5px;
+        border-color:white;
+        border-radius:20px;
+    }
+</style>
+<body onload=startGame()>
+    <div id="message">messages will go here</div>
+    <div class="X" id="X">X</div>
+    <div class="O" id="O">O</div>
+    <div class="container">
+        <button id="s1" class="square"  onclick="nextMove(this)"></button>
+        <button id="s2" class="square"  onclick="nextMove(this)"></button>
+        <button id="s3" class="square"  onclick="nextMove(this)"></button>
+        <button id="s4" class="square"  onclick="nextMove(this)"></button>
+        <button id="s5" class="square"  onclick="nextMove(this)"></button>
+        <button id="s6" class="square"  onclick="nextMove(this)"></button>
+        <button id="s7" class="square"  onclick="nextMove(this)"></button>
+        <button id="s8" class="square"  onclick="nextMove(this)"></button>
+        <button id="s9" class="square" onclick="nextMove(this)" ></button>
+    </div>
+    <button  onclick= "startGame()">Start Over</button>
+</body>
+</html>
+
